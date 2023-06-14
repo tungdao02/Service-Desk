@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+        id="menu_update_night_shift"
+        parent="menu_hr_attendance_root"
+        sequence="11"
+        groups="hr_attendance.group_hr_attendance_user"
+        action="action_server_update_night_shift"
+        name="Night Shift"/>
+</odoo>

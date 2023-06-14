@@ -1,0 +1,42 @@
+
+tr th {
+    min-width:120px !important;
+    text-align: center;
+}
+
+tr td {
+    min-width:120px !important;
+    text-align: center;
+}
+
+.row_column_red {
+    background-color: red !important;
+    color: black;
+    background:red;
+//     field_color : red;
+}
+
+.row_column_yellow {
+    background-color: yellow !important;
+    color: black;
+    background: yellow;
+//     field_color : red;
+}
+
+.btn_report_schedule {
+    width:120px !important
+}
+
+
+.column_report_schedule {
+    width:120px !important
+}
+
+.tag_employee_schedule {
+    padding:2px;
+    font-style: italic;
+    background-color: #ffbf80 !important;
+    border: 1px solid black !important;
+    border-radius: 5px !important;
+    margin-right:2px !important;
+}

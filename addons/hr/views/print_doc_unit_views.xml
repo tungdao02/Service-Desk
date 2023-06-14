@@ -1,0 +1,46 @@
+<odoo>
+	<record id="print_doc_unit_view_tree" model="ir.ui.view">
+		<field name="name">print.doc.unit.tree</field>
+		<field name="model">print.doc.unit</field>
+		<field name="arch" type="xml">
+			<tree string="Danh sách đơn vị tính">
+                <field name="unit" string="Tên"/>
+			</tree>
+		</field>
+	</record>
+	<record id="print_doc_unit_view_form" model="ir.ui.view">
+		<field name="name">print.doc.unit.form</field>
+		<field name="model">print.doc.unit</field>
+		<field name="arch" type="xml">
+			<form string="Tạo mới">
+<!--				<field name="can_draft" invisible="1"/>-->
+<!--				<field name="can_waiting_for_approval" invisible="1"/>-->
+<!--                <field name="can_approve" invisible="1"/>-->
+<!--                <field name="can_reject" invisible="1"/>-->
+<!--				<field name="is_permission" invisible="1"/>-->
+<!--                <header>-->
+<!--                    <button string="Gửi duyệt" name="action_confirm" attrs="{'invisible':['|',('is_permission','=', True),('status','!=','A')]}" type="object" class="oe_highlight"/>-->
+<!--					<button string="Xác nhận" name="action_approve" attrs="{'invisible':['|',('is_permission','=', True),('status','!=', 'B')]}" type="object" class="oe_highlight"/>-->
+<!--					<button string="Từ chối" name="action_reject" attrs="{'invisible':['|',('is_permission','=', True),('status','!=', 'B')]}" type="object" class="oe_highlight"/>-->
+<!--                    <field name="status" widget="statusbar" statusbar_visible="A,B,C,D"/>-->
+<!--                </header>-->
+				<sheet>
+					<group>
+						<field name="unit" string="Tên" required="True"/>
+					</group>
+
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="print_doc_unit_action" model="ir.actions.act_window">
+		<field name="name">print doc unit</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">print.doc.unit</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<menuitem id="menu_print_doc_unit" name="print.doc.unit" />
+	<menuitem id="menu_print_doc_unit_1" name="print.doc.unit" parent="menu_print_doc_unit" action="print_doc_unit_action"/>
+</odoo>

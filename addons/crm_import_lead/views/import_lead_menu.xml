@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<menuitem
+				id="import_lead_menu"
+				name="Import Leads"
+				action="import_lead_wizard_action"
+				parent="crm.crm_menu_leads"
+		/>
+
+	</data>
+</odoo>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="sync_phone_ext_numbers_form_view" model="ir.ui.view">
+		<field name="name">crm.phone.ext.number.sync.form</field>
+		<field name="model">crm.phone.ext.number.sync</field>
+		<field name="arch" type="xml">
+			<form string="Ext Number">
+				<sheet>
+					<footer>
+						<button name="action_sync" type="object" string="Update Ext" class="btn-primary" data-hotkey="q"/>
+						<button string="Cancel" special="cancel" icon="fa-times" class="btn btn-danger"  />
+					</footer>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<record id="add_phone_ext_numbers_form_view" model="ir.ui.view">
+		<field name="name">crm.phone.ext.number.sync.form</field>
+		<field name="model">crm.phone.ext.number.sync</field>
+		<field name="arch" type="xml">
+			<form string="Ext Number">
+				<sheet>
+					<sheet>
+						<group>
+							<field name="user_id"></field>
+							<field name="role_name"></field>
+						</group>
+					</sheet>
+					<footer>
+						<button name="action_add" type="object" string="Update Ext" class="btn-primary" data-hotkey="q"/>
+						<button string="Cancel" special="cancel" icon="fa-times" class="btn btn-danger"  />
+					</footer>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="action_sync_phone_ext_numbers" model="ir.actions.act_window">
+		<field name="name">Ext Number</field>
+		<field name="res_model">crm.phone.ext.number.sync</field>
+		<field name="view_mode">form</field>
+		<field name="target">new</field>
+		<field name="view_id" ref="sync_phone_ext_numbers_form_view"/>
+	</record>
+	<record id="action_add_phone_ext_numbers" model="ir.actions.act_window">
+		<field name="name">Ext Number</field>
+		<field name="res_model">crm.phone.ext.number.sync</field>
+		<field name="view_mode">form</field>
+		<field name="target">new</field>
+		<field name="view_id" ref="add_phone_ext_numbers_form_view"/>
+	</record>
+</odoo>

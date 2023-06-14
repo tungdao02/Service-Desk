@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="hr_time_recorder_form_view" model="ir.ui.view">
+            <field name="name">hr.time.recorder.form.view</field>
+            <field name="model">hr.time.recorder</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <h1>Máy chấm công</h1>
+                    </header>
+                    <sheet>
+                            <group>
+                                <field name="time_recorder_id"/>
+                                <field name="address_ip"/>
+                                <field name="connection"/>
+                                <field name="com_port"/>
+                                <field name="read_type"/>
+                                <field name="status"/>
+                                <field name="deleted"/>
+                                <field name="scan_delay"/>
+                                <field name="code"/>
+                                <field name="description"/>
+                                <field name="work_address"/>
+
+                            </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_time_recorder_tree_view" model="ir.ui.view">
+            <field name="name">hr.time.recorder.tree.view</field>
+            <field name="model">hr.time.recorder</field>
+            <field name="arch" type="xml">
+                <tree string="Máy chấm công" >
+                    <field name="time_recorder_id"/>
+                    <field name="address_ip"/>
+                    <field name="connection"/>
+                    <field name="com_port"/>
+                    <field name="read_type"/>
+                    <field name="status"/>
+                    <field name="deleted"/>
+                    <field name="scan_delay"/>
+                    <field name="code"/>
+                    <field name="description"/>
+                    <field name="work_address"/>
+                </tree>
+          </field>
+        </record>
+
+
+        <record id="hr_time_recorder" model="ir.actions.act_window">
+            <field name="name">Máy chấm công </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.time.recorder</field>
+            <!-- <field name="view_type">form</field> --> <!-- Odoo 13 has removed this field -->
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('hr_time_recorder_tree_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('hr_time_recorder_form_view')})]"/>
+        </record>
+        <menuitem
+            id="menu_human_resources_configuration_time_record"
+            parent="menu_hr_attendance_root"
+            sequence="10"
+            groups="hr_attendance.group_hr_attendance_user"
+            action="hr_time_recorder"
+            name="Máy chấm công"/>
+</odoo>

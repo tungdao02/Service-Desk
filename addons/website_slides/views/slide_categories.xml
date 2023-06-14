@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="slide_categories_form_view" model="ir.ui.view">
+            <field name="name">slide.categories.form.view</field>
+            <field name="model">slide.categories</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <h1>Set categories</h1>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="slicetag_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="slide_categories_tree_view" model="ir.ui.view">
+            <field name="name">slide.categories.tree.view</field>
+            <field name="model">slide.categories</field>
+            <field name="arch" type="xml">
+                <tree string="Categories" >
+                    <field name="name"/>
+                    <field name="slicetag_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="slice_categories" model="ir.actions.act_window">
+            <field name="name">Categories</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">slide.categories</field>
+            <!-- <field name="view_type">form</field> --> <!-- Odoo 13 has removed this field -->
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('slide_categories_tree_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('slide_categories_form_view')})]"/>
+        </record>
+<!--        <menuitem-->
+<!--            id="menu_slice_categories"-->
+<!--            parent="website_slides_menu_courses"-->
+<!--            name="Categories"-->
+<!--            sequence="25"-->
+<!--            action="slice_categories"/>-->
+</odoo>

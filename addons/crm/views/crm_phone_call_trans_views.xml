@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    action-->
+    <record id="crm_phone_call_trans_views" model="ir.actions.act_window">
+        <field name="name">Call History</field>
+        <field name="res_model">crm.phone.call.trans</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+        <record id="crm_phone_call_trans_form" model="ir.ui.view">
+        <field name="name">crm.phone.call.trans.views.form</field>
+        <field name="model">crm.phone.call.trans</field>
+        <field name="arch" type="xml">
+            <form string="Call Transaction" create="0">
+                <sheet>
+                    <group>
+                        <field name="phone" readonly="1" />
+                        <field name="user_id" readonly="1" />
+                        <field name="phone_call_ref_id" readonly="1" />
+                        <field name="call_date" readonly="1" />
+                        <field name="note" readonly="1" />
+                        <field name="sipUser" readonly="1" />
+                        <field name="sipNumber" readonly="1" />
+                        <field name="totalDuration" readonly="1" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--    view-->
+    <record id="crm_phone_call_trans_tree" model="ir.ui.view">
+        <field name="name">crm.phone.call.trans.views.tree</field>
+        <field name="model">crm.phone.call.trans</field>
+        <field name="arch" type="xml">
+            <tree string="Call Transaction" create="0">
+                <field name="phone" readonly="1" />
+                <field name="user_id" readonly="1" />
+                <field name="phone_call_ref_id" readonly="1" />
+                <field name="call_date" readonly="1" />
+                <field name="note" readonly="1" />
+                <field name="sipUser" readonly="1" />
+                <field name="sipNumber" readonly="1" />
+                <field name="totalDuration" readonly="1" />
+                <field name="record_file" widget="url" readonly="1" />
+            </tree>
+        </field>
+    </record>
+
+
+</odoo>

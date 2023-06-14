@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<odoo>
+    <!-- Actions -->
+    <record id="helpdesk_ticket_dashboard_action" model="ir.actions.act_window">
+        <field name="name">Tổng quát</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.ticket.team</field>
+        <field name="view_mode">kanban,tree,form,pivot</field>
+    </record>
+    <record id="helpdesk_ticket_action" model="ir.actions.act_window">
+        <field name="name">Yêu cầu</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.ticket</field>
+        <field name="view_mode">tree,kanban,form,pivot</field>
+    </record>
+    <record id="helpdesk_ticket_reporting_action" model="ir.actions.act_window">
+        <field name="name">Báo cáo</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.ticket</field>
+        <field name="view_mode">pivot,graph</field>
+    </record>
+    <record id="helpdesk_ticket_channel_action" model="ir.actions.act_window">
+        <field name="name">Kênh phương tiện</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.ticket.channel</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="helpdesk_ticket_category_action" model="ir.actions.act_window">
+        <field name="name">Danh mục phụ</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.ticket.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="helpdesk_ticket_team_action" model="ir.actions.act_window">
+        <field name="name">Đội hỗ trợ</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.ticket.team</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="helpdesk_ticket_stage_action" model="ir.actions.act_window">
+        <field name="name">Trạng thái yêu cầu</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.ticket.stage</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="helpdesk_ticket_tag_action" model="ir.actions.act_window">
+        <field name="name">Nhãn yêu cầu</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.ticket.tag</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="helpdesk_ticket_mother_category_action" model="ir.actions.act_window">
+            <field name="name">Danh mục chính</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">helpdesk.ticket.mother.category</field>
+            <field name="view_mode">tree,form</field>
+      </record>
+    
+
+    <record id="helpdesk_ticket_difficulty_action" model="ir.actions.act_window">
+        <field name="name">Độ khó</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.ticket.difficulty</field>
+        <field name="view_mode">tree,form</field>
+        
+    </record>
+
+    <record id="helpdesk_ticket_sla_model_action" model="ir.actions.act_window">
+        <field name="name">Mẫu SLA</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.ticket.sla.model</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="helpdesk_ticket_pipeline_action" model="ir.actions.act_window">
+        <field name="name">Pipeline</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.ticket.pipeline</field>
+        <field name="view_mode">tree,form</field>
+
+    </record>
+
+    <!-- <record id="helpdesk_ticket_sla_action" model="ir.actions.act_window">
+        <field name="name">SLA</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.ticket</field>
+        <field name="view_mode">tree,form</field>
+    </record> -->
+
+    <!-- <record id ="helpdesk_sub_ticket_action" model="ir.actions.act_window">
+        <field name="name">Sub Ticket</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.sub.ticket</field>
+        <field name="view_mode">tree,kanban,form</field>
+    </record> -->
+    <!-- <record id= "helpdesk_ticket_summerize_SLA_action" model="ir.actions.act_window">
+        <field name="name">Summerize SLA</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.ticket.summerize</field>
+        <field name="view_mode">tree,form,graph</field>
+    </record> -->
+ 
+
+    <!-- <record id="helpdesk_ticket_sla_graph" model="ir.ui.view">
+        <field name="name">view.helpdesk.sla.graph</field>
+        <field name="model">helpdesk.ticket.sla</field>
+        <field name="arch" type="xml">
+            <graph>
+            
+            <field name="status" type = "row"  />
+            <field name="name" type = "row"  />
+                
+                
+            </graph>
+        </field>
+    </record> -->
+
+    <record id ="helpdesk_ticket_sla_summerize_action" model="ir.actions.act_window">
+        <field name="name">Trạng thái</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.ticket</field>
+        <field name="view_id" ref="helpdesk_ticket_sla1"/>
+        <field name="view_mode">tree</field>
+        <!-- <field name ="view_id" ref ="helpdesk_ticket_sla_graph"/> -->
+    </record>
+    
+
+    <!-- Menus -->
+    <menuitem
+        id="helpdesk_ticket_main_menu"
+        name="Helpdesk"
+        sequence="16"
+        web_icon="helpdesk_mgmt,static/description/icon.png"
+        groups="group_helpdesk_Employee,group_helpdesk_team_manager"
+        
+    />
+    <menuitem
+        id="helpdesk_ticket_dashboard_menu"
+        name="Tổng quát"
+        parent="helpdesk_ticket_main_menu"
+        action="helpdesk_ticket_dashboard_action"
+        sequence="1"
+        
+    />
+    <menuitem
+        id="helpdesk_ticket_menu"
+        name="Yêu cầu"
+        parent="helpdesk_ticket_main_menu"
+        action="helpdesk_ticket_action"
+        sequence="10"
+    />
+    <menuitem
+        id="helpdesk_ticket_reporting_menu"
+        name="Báo cáo"
+        parent="helpdesk_ticket_main_menu"
+        sequence="25"
+        groups="group_helpdesk_manager"
+    />
+    <menuitem
+        id="helpdesk_ticket_reporting_analysis"
+        name="Yêu cầu"
+        parent="helpdesk_ticket_reporting_menu"
+        action="helpdesk_ticket_reporting_action"
+        sequence="5"
+    />
+    <menuitem
+        id="helpdesk_ticket_config_main_menu"
+        name="Tùy chỉnh"
+        parent="helpdesk_ticket_main_menu"
+        sequence="35"
+        groups="group_helpdesk_manager"
+    />
+    <menuitem
+        id="helpdesk_config_settings_menu"
+        name="Thiết lập"
+        parent="helpdesk_ticket_config_main_menu"
+        action="action_helpdesk_mgmt_config_settings"
+        sequence="1"
+    />
+    <menuitem
+        id="helpdesk_ticket_channel_menu"
+        name="Kênh phương tiện"
+        parent="helpdesk_ticket_config_main_menu"
+        action="helpdesk_ticket_channel_action"
+        sequence="5"
+    />
+    <menuitem
+        id="helpdesk_ticket_category_menu"
+        name="Danh mục phụ"
+        parent="helpdesk_ticket_config_main_menu"
+        action="helpdesk_ticket_category_action"
+        sequence="15"
+    />
+    <menuitem
+        id="helpdesk_ticket_stage_menu"
+        name="Trạng thái"
+        parent="helpdesk_ticket_config_main_menu"
+        action="helpdesk_ticket_stage_action"
+        sequence="25"
+    />
+    <menuitem
+        id="helpdesk_ticket_team_menu"
+        name="Đội hỗ trợ"
+        parent="helpdesk_ticket_config_main_menu"
+        action="helpdesk_ticket_team_action"
+        sequence="35"
+    />
+    <menuitem
+        id="helpdesk_ticket_tag_menu"
+        name="Nhãn yêu cầu"
+        parent="helpdesk_ticket_config_main_menu"
+        action="helpdesk_ticket_tag_action"
+        sequence="45"
+    />
+    <menuitem 
+        id="helpdesk_ticket_mother_category_menu"
+        name="Danh mục chính"
+        parent="helpdesk_ticket_config_main_menu"
+        action="helpdesk_ticket_mother_category_action"
+        sequence="55"
+    />
+    <menuitem
+        id="helpdesk_ticket_difficulty_menu"
+        name="Độ khó"
+        parent="helpdesk_ticket_config_main_menu"
+        action="helpdesk_ticket_difficulty_action"
+        sequence="65"
+    />
+    <menuitem
+        id="helpdesk_ticket_sla_model_menu"
+        name="Mẫu SLA"
+        parent="helpdesk_ticket_config_main_menu"
+        action="helpdesk_ticket_sla_model_action"
+        sequence="75"
+    />
+    <menuitem
+        id="helpdesk_ticket_pipeline_menu"
+        name="Pipeline"
+        parent="helpdesk_ticket_config_main_menu"
+        action="helpdesk_ticket_pipeline_action"
+        sequence="85"
+    />
+    <!-- <menuitem
+        id="helpdesk_ticket_sla_menu"
+        name="SLA"
+        parent="helpdesk_ticket_config_main_menu"
+        action="helpdesk_ticket_sla_action"
+        sequence="95"
+    /> -->
+    <!-- <menuitem
+        id="helpdesk_ticket_sub_ticket_menu"
+        name="Sub Tickets"
+        parent="helpdesk_ticket_config_main_menu"
+        action="helpdesk_sub_ticket_action"
+        sequence="96"
+    /> -->
+    <!-- <menuitem
+        id="helpdesk_ticket_summerize_SLA"
+        name="Tickets SLA"
+        parent="helpdesk_ticket_reporting_menu"
+        action="helpdesk_ticket_summerize_SLA_action"
+        sequence="20"
+   /> -->
+
+   <menuitem 
+    id="helpdesk_ticket_sla_summerize_menu"
+    name="Trạng thái SLA"
+    parent="helpdesk_ticket_reporting_menu"
+    action="helpdesk_ticket_sla_summerize_action"
+    sequence="30"
+/>
+
+
+   
+
+
+
+</odoo>

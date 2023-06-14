@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="print_employee_contract" model="ir.actions.report">
+        <field name="name">Print </field>
+        <field name="model">hr.contract</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hr_contract.hr_print_employee_contract</field>
+        <field name="report_file">hr_contract.hr_print_employee_contract</field>
+        <field name="print_report_name">'Print - %s' % (object.name).replace('/', '')</field>
+        <field name="binding_model_id" ref="model_hr_contract"/>
+        <field name="binding_type">report</field>
+    </record>
+    <template id="hr_contract.hr_print_employee_contract">
+        <t t-call="web.html_container">
+            <div class="page">
+                <t >Test</t>
+<!--                <t t-foreach="docs" t-as="contract">-->
+<!--                    <t t-value="contract.name"/>-->
+<!--                </t>-->
+            </div>
+        </t>
+    </template>
+</odoo>

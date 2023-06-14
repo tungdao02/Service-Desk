@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="hr_attendance_explanation_form_view" model="ir.ui.view">
+            <field name="name">hr.attendance.explanation.form.view</field>
+            <field name="model">hr.attendance.explanation</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <h1>Giải trình chấm công</h1>
+                    </header>
+                    <sheet>
+                            <group>
+                                <field name="datetime_attendance"/>
+                                <field name="date_attendance"/>
+                                <field name="time_attendance"/>
+
+<!--                                <field name="date_attendance"/>-->
+<!--                                <field name="time_attendance" widget ="float_time"/>-->
+                                <field name="reason"/>
+                                <field name="content"/>
+                            </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_attendance_explanation_tree_view" model="ir.ui.view">
+            <field name="name">hr.attendance.explanation.tree.view</field>
+            <field name="model">hr.attendance.explanation</field>
+            <field name="arch" type="xml">
+                <tree string="Tạo giải trình chấm công" >
+<!--                    <field name="datetime_attendance"/>-->
+                    <field name="date_attendance"/>
+                    <field name="time_attendance"/>
+                    <!-- <field name="reason"/> -->
+                    <field name="explan_content"/>
+                    <field name="status" readonly="1"/>
+                    <button name="action_confirm" type="object" string="Confirm"  />
+                    <button name="action_refuse" type="object" string="Refuse"   />
+                </tree>
+            </field>
+        </record>
+        
+
+        <record id="attendance_explanation" model="ir.actions.act_window">
+            <field name="name">Giải trình chấm công </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.attendance.explanation</field>
+            <!-- <field name="view_type">form</field> --> <!-- Odoo 13 has removed this field -->
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('hr_attendance_explanation_tree_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('hr_attendance_explanation_form_view')})]"/>
+        </record>
+        <menuitem
+            id="menu_human_resources_configuration_attendance_explanation"
+            parent="menu_hr_attendance_root"
+            sequence="10"
+            groups="hr_attendance.group_hr_attendance_user"
+            action="attendance_explanation"
+            name="Giải trình"/>
+</odoo>

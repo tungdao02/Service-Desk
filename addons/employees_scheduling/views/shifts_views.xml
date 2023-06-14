@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="shifts_tree_action" model="ir.actions.act_window">
+        <field name="name">Ca làm việc</field>
+        <field name="res_model">shifts</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="shifts_tree_view" model="ir.ui.view">
+        <field name="name">shifts_tree_view</field>
+        <field name="model">shifts</field>
+        <field name="arch" type="xml">
+            <tree string="Shifts">
+                <field name="name" />
+                <field name="start_work_time" widget="float_time" />
+                <field name="end_work_time" widget="float_time" />
+                <field name="start_rest_time" widget="float_time" />
+                <field name="end_rest_time" widget="float_time" />
+                <field name="total_work_time" widget="float_time" />
+                <field name="total_rest_time" widget="float_time" />
+                <field name="shifts_eat" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="shifts_form_view" model="ir.ui.view">
+        <field name="name">shifts_form_view</field>
+        <field name="model">shifts</field>
+        <field name="arch" type="xml">
+            <form string="Shifts">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" style="border: 1px solid black" />
+                        </group>
+                        <group>
+                            <span>Thời gian làm việc*</span>
+                            <group>
+                                <field name="start_work_time" string="Giờ bắt đầu làm*" style="border: 1px solid black"
+                                    widget="float_time" />
+                                <field name="end_work_time" style="border: 1px solid black"
+                                    widget="float_time" string="Giờ kết thức làm"/>
+                            </group>
+                        </group>
+                        <group>
+                            <span>Thời gian nghỉ*</span>
+                            <group>
+                                <field name="start_rest_time" style="border: 1px solid black"
+                                    widget="float_time" string="Giờ bắt đầu nghỉ*"/>
+                                <field name="end_rest_time" style="border: 1px solid black"
+                                    widget="float_time" string="Giờ kết thức nghỉ*"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="fix_rest_time" string="Ca gãy*" />
+                        </group>
+                        <group>
+                            <span>Ca ăn*</span>
+                            <group>
+                                <field name="breakfast" />
+                                <field name="lunch" />
+                                <field name="dinner" />
+                                <field name="night" />
+                            </group>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem id="shifts_tree_menu" parent="employees_scheduling_menu_root" name="Cấu hình ca"
+        action="shifts_tree_action" sequence="5" />
+</odoo>

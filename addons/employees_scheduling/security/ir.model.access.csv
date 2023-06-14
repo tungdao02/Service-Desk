@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_employees_scheduling,access_employees_scheduling,model_employees_scheduling,base.group_user,1,1,1,1
+access_shifts,access_shifts,model_shifts,base.group_user,1,1,1,1
+access_employee_schedule_report,access_employee_schedule_report,model_employee_schedule_report,base.group_user,1,1,1,1
+access_employee_schedule_inherit,access_employee_schedule_inherit,model_employee_schedule_inherit,base.group_user,1,1,1,1

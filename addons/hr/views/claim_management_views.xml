@@ -1,0 +1,86 @@
+<odoo>
+	<record id="claim_management_view_tree" model="ir.ui.view">
+		<field name="name">claim.management.tree</field>
+		<field name="model">claim.management</field>
+		<field name="arch" type="xml">
+			<tree string="Danh sách đơn yêu cầu">
+				<field name="employee_id" string="Nhân viên"/>
+				<field name="claim_type_id" string="Loại đơn yêu cầu"/>
+				<field name="reasons"/>
+				<field name="start_day"/>
+				<field name="end_day"/>
+				<field name="time"/>
+				<field name="status"/>
+			</tree>
+		</field>
+	</record>
+	<record id="claim_management_view_form" model="ir.ui.view">
+		<field name="name">claim.management.form</field>
+		<field name="model">claim.management</field>
+		<field name="arch" type="xml">
+			<form string="Tạo mới đơn">
+				<field name="can_draft" invisible="1"/>
+				<field name="can_waiting_for_approval" invisible="1"/>
+                <field name="can_approve" invisible="1"/>
+                <field name="can_reject" invisible="1"/>
+				<field name="is_permission" invisible="1"/>
+                <header>
+                    <button string="Gửi duyệt" name="action_confirm" attrs="{'invisible':['|',('is_permission','=', True),('status','!=','A')]}" type="object" class="oe_highlight"/>
+					<button string="Xác nhận" name="action_approve" attrs="{'invisible':['|',('is_permission','=', True),('status','!=', 'B')]}" type="object" class="oe_highlight"/>
+					<button string="Từ chối" name="action_reject" attrs="{'invisible':['|',('is_permission','=', True),('status','!=', 'B')]}" type="object" class="oe_highlight"/>
+                    <field name="status" widget="statusbar" statusbar_visible="A,B,C,D"/>
+                </header>
+				<sheet>
+					<group string="Thông tin nhân viên">
+						<group>
+							<field name="employee_id" string="Nhân viên" required="True" readonly="True"/>
+							<field name="department_id" string="Phòng/Ban" readonly="True"/>
+							<field name="employee_type" readonly="True"/>
+						</group>
+						<group>
+							<field name="company_id" required="True" readonly="True"/>
+							<field name="parent_id" readonly="True"/>
+						</group>
+					</group>
+					<group string="Thông tin đơn yêu cầu">
+						<group>
+							<field name="claim_type_id" attrs="{'readonly':['&amp;',('is_permission','=', True),('status','!=','A')]}"/>
+<!--							<field name="hr_leave_type_id"-->
+<!--                                            options="{'no_create': True}"/>-->
+						</group>
+                        <group>
+
+						</group>
+						<group>
+							<field name="start_day" required="True" attrs="{'readonly':['&amp;',('is_permission','=', True),('status','!=','A')]}"/>
+                            <field name="for_reasons" required="True" attrs="{'readonly':['&amp;',('is_permission','=', True),('status','!=','A')]}"/>
+							<field name="time" required="True" attrs="{'readonly':['&amp;',('is_permission','=', True),('status','!=','A')]}"/>
+						</group>
+						<group>
+							<field name="end_day" required="True" attrs="{'readonly':['&amp;',('is_permission','=', True),('status','!=','A')]}"/>
+                            <field name="reasons" required="True" attrs="{'readonly':['&amp;',('is_permission','=', True),('status','!=','A')]}"/>
+						</group>
+					</group>
+					<group string="Yêu cầu duyệt">
+						<field name="approve" attrs="{'readonly':['&amp;',('is_permission','=', True),('status','!=','A')]}"/>
+						<field name="browsing_object" attrs="{'readonly':['&amp;',('is_permission','=', True),('status','!=','A')]}"/>
+						<field name="approved_by_id" readonly="True"/>
+					</group>
+					<group string="Danh sách email cần gửi tới">
+						<field name="send_to" attrs="{'readonly':['&amp;',('is_permission','=', True),('status','!=','A')]}"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="claim_management_action" model="ir.actions.act_window">
+		<field name="name">Claim management</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">claim.management</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<menuitem id="menu_claim_management" name="claim.management" />
+	<menuitem id="menu_claim_management_1" name="claim.management" parent="menu_claim_management" action="claim_management_action"/>
+</odoo>

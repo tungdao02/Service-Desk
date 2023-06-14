@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+     
+<odoo>  
+    <record id = "helpdesk_ticket_pipeline_tree" model="ir.ui.view">
+        <field name="name">view.helpdesk_pipeline.tree</field>
+        <field name="model">helpdesk.ticket.pipeline</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name ="name" string = "tên"/>
+                <field name ="active"/>
+        
+            </tree>
+        </field>
+
+    </record>
+
+    <record id = "helpdesk_ticket_pipeline_form" model="ir.ui.view">
+        <field name="name">view.helpdesk_pipeline.form</field>
+        <field name="model">helpdesk.ticket.pipeline</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name ="name" string = "Tên pipeline"/>
+                        <field name ="active"/>
+                        
+                        
+                    </group>
+
+                    <notebook>
+                    <page string ="Trạng thái">
+                    <field name ="stages" string ="Trạng thái" />
+                    </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+
+</odoo>

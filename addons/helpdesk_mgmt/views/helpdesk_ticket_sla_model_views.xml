@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    
+    <record id="helpdesk_ticket_sla_model_tree" model="ir.ui.view">
+        <field name="name">view.helpdesk.sla.model.tree</field>
+        <field name="model">helpdesk.ticket.sla.model</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name ="name" string = "Mẫu SLA"/>
+               
+            </tree>
+        </field>
+    </record>
+
+    <record id="helpdesk_ticket_sla_model_form" model="ir.ui.view">
+        <field name="name">view.helpdesk.sla.model.form</field>
+        <field name="model">helpdesk.ticket.sla.model</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name ="name" string = "Mẫu SLA" />
+                        <field name ="active"/>
+                        
+                        
+                    </group>
+                    <group>
+                    <field name ="timelimit" string ="giới hạn thời gian"  widget="float_time"/>
+                    </group>
+                    
+                    <notebook>
+                    <page string ="mô tả" name ="description">
+                    <field name ="description"/>
+                    </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

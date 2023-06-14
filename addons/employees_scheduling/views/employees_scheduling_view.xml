@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="employees_scheduling_action" model="ir.actions.act_window">
+        <field name="name">Phân ca nhân viên</field>
+        <field name="res_model">employees_scheduling</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record id="employees_scheduling_tree_view" model="ir.ui.view">
+        <field name="name">employees_scheduling_tree_view</field>
+        <field name="model">employees_scheduling</field>
+        <field name="arch" type="xml">
+            <tree string="Phân ca nhân viên">
+                <field name="employee_ids" widget="many2many_tags" />
+                <field name="shift_monday" widget="many2many_tags" />
+                <field name="shift_tuesday" widget="many2many_tags" />
+                <field name="shift_wednesday" widget="many2many_tags" />
+                <field name="shift_thursday" widget="many2many_tags" />
+                <field name="shift_friday" widget="many2many_tags" />
+                <field name="shift_saturday" widget="many2many_tags" />
+                <field name="shift_sunday" widget="many2many_tags" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="employees_scheduling_form_view" model="ir.ui.view">
+        <field name="name">employees_scheduling_form_view</field>
+        <field name="model">employees_scheduling</field>
+        <field name="arch" type="xml">
+            <form string="Schedule">
+                <sheet>
+                    <group style="display:flex; flex-direction: row; justify-content: space-evenly;">
+                        <field name="start" string="From date*" />
+                        <field name="stop" string="To date*" />
+                    </group>
+                    <notebook>
+                        <page string="Chi tiết phân công">
+                            <group>
+                                <group style="display: flex; flex-direction: row">
+                                    <span
+                                        style="font-weight: bold;">Thứ
+                                        2:*
+                                    </span>
+                                    <field name="shift_monday" nolabel="1"
+                                        style="border: 1px solid black" widget="many2many_tags" />
+                                </group>
+                                <group style="display: flex; flex-direction: row">
+                                    <span style="font-weight: bold">Thứ 3:*</span>
+                                    <field name="shift_tuesday" nolabel="1"
+                                        style="border: 1px solid black" widget="many2many_tags" />
+                                </group>
+                                <group style="display: flex; flex-direction: row">
+                                    <span style="font-weight: bold">Thứ 4:*</span>
+                                    <field name="shift_wednesday" nolabel="1"
+                                        style="border: 1px solid black" widget="many2many_tags" />
+                                </group>
+                                <group style="display: flex; flex-direction: row">
+                                    <span style="font-weight: bold">Thứ 5:*</span>
+                                    <field name="shift_thursday" nolabel="1"
+                                        style="border: 1px solid black" widget="many2many_tags" />
+                                </group>
+                                <group style="display: flex; flex-direction: row">
+                                    <span style="font-weight: bold">Thứ 6:*</span>
+                                    <field name="shift_friday" nolabel="1"
+                                        style="border: 1px solid black" widget="many2many_tags" />
+                                </group>
+                                <group style="display: flex; flex-direction: row">
+                                    <span style="font-weight: bold">Thứ 7:*</span>
+                                    <field name="shift_saturday" nolabel="1"
+                                        style="border: 1px solid black" widget="many2many_tags" />
+                                </group>
+                            </group>
+                            <group style="display: flex; flex-direction: row">
+                                <span style="font-weight: bold">Chủ nhật:*</span>
+                                <field name="shift_sunday" nolabel="1"
+                                    style="border: 1px solid black" widget="many2many_tags" />
+                            </group>
+                        </page>
+                    </notebook>
+                    <notebook>
+                        <page string="Nhân sự áp dụng">
+                            <field name="employee_ids">
+                                <tree>
+                                    <field name="code" />
+                                    <field name="name" string="Tên nhân viên" />
+                                    <field name="job_id" string="Chức vụ" />
+                                    <field name="department_id" string="Phòng ban" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Menus -->
+    <menuitem id="employees_scheduling_menu_root" name="Quản lý phân ca" />
+    <menuitem id="employees_scheduling_menu_view" name="Phân ca"
+        parent="employees_scheduling_menu_root" action="employees_scheduling_action" sequence="8" />
+
+</odoo>

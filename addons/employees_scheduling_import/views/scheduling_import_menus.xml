@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <menuitem id='scheduling_import_menu' parent='employees_scheduling.employees_scheduling_menu_root' name='Import Phân ca' action='scheduling_import_wizard_action' />
+</odoo>

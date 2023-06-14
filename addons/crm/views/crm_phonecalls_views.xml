@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Views-->
+<!--    <record id="crm_phonecalls_hotline_action" model="ir.actions.act_window">-->
+<!--        <field name="name">Hotlines</field>-->
+<!--        <field name="res_model">crm.phonecalls.hotline</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
+
+<!--    <record id="crm_phonecalls_hotline_tree_view" model="ir.ui.view">-->
+<!--        <field name="name">crm.phonecalls.hotline.tree</field>-->
+<!--        <field name="model">crm.phonecalls.hotline</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree string="Hotlines">-->
+<!--                <field name="create_date" string="Ngày tạo" />-->
+<!--                <field name="name" />-->
+<!--                <field name="telecom_operator" />-->
+<!--                <field name="manager" />-->
+<!--                <field name="sales_team" />-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="crm_phonecall_myphone_view" model="ir.ui.view">-->
+<!--        <field name="name">crm.myphone.tree</field>-->
+<!--        <field name="model">crm.myphone</field>-->
+<!--        <field name="arch" type='xml'>-->
+<!--            <tree string="Cuộc gọi của tôi">-->
+<!--                <field name='name' class='myphone_tree' />-->
+<!--                <field name='customer' class='myphone_tree' />-->
+<!--                <field name='time_spent' widget='float_time' class='myphone_tree' />-->
+<!--                <field name='description' class='myphone_tree' />-->
+<!--                <field name='event_listener' class='myphone_tree' />-->
+<!--                <field name='sales_team_id' class='myphone_tree' />-->
+<!--                <field name='record_file' class='myphone_tree' />-->
+<!--                <field name='status' />-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--    <record id="crm_phonecall_myphone_form" model="ir.ui.view">-->
+<!--        <field name="name">crm.myphone.form</field>-->
+<!--        <field name="model">crm.myphone</field>-->
+<!--        <field name="arch" type='xml'>-->
+<!--            <form string="Cuộc gọi của tôi">-->
+<!--                <sheet>-->
+<!--                    <group>-->
+<!--                        <field name='name' placeholder='Họ và tên...'-->
+<!--                        />-->
+<!--                        <field name='customer' placeholder='Họ và tên...'-->
+<!--                        />-->
+<!--                        <field name='time_spent'-->
+<!--                            placeholder='Thời lượng cuộc gọi... Ví dụ: 1.00 = 1:00 (1 giờ)'-->
+<!--                        />-->
+<!--                        <field name='event_listener' placeholder='Sự kiện...'-->
+<!--                        />-->
+<!--                        <field name='sales_team_id' placeholder='Sales team...'-->
+<!--                        />-->
+<!--                        <field name='record_file' placeholder='File ghi âm cuộc gọi...'-->
+<!--                        />-->
+<!--                        <field name='status' placeholder='Trạng thái...'-->
+<!--                        />-->
+<!--                        <field name='description'-->
+<!--                            placeholder='Nhập mô tả... Ví dụ: quý khách đặt phòng abc ngày 11-12'-->
+<!--                        />-->
+<!--                    </group>-->
+<!--                </sheet>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--&lt;!&ndash;    <record id="crm_phonecalls_oddnumber_form" model="ir.ui.view">&ndash;&gt;-->
+<!--&lt;!&ndash;        <field name="name">crm.phonecalls.oddnumber.form</field>&ndash;&gt;-->
+<!--&lt;!&ndash;        <field name="model">crm.phonecalls.oddnumber</field>&ndash;&gt;-->
+<!--&lt;!&ndash;        <field name="arch" type="xml">&ndash;&gt;-->
+<!--&lt;!&ndash;            <form string="Quản lý số lẻ">&ndash;&gt;-->
+<!--&lt;!&ndash;                <sheet>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <group>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <field name="name" />&ndash;&gt;-->
+<!--&lt;!&ndash;                        <field name="sales_team" />&ndash;&gt;-->
+<!--&lt;!&ndash;                        <field name="manager" />&ndash;&gt;-->
+<!--&lt;!&ndash;                        <field name="sales_member" invisible="1" />&ndash;&gt;-->
+<!--&lt;!&ndash;                        <field name="selected_sales_member" />&ndash;&gt;-->
+<!--&lt;!&ndash;                    </group>&ndash;&gt;-->
+<!--&lt;!&ndash;                </sheet>&ndash;&gt;-->
+<!--&lt;!&ndash;            </form>&ndash;&gt;-->
+<!--&lt;!&ndash;        </field>&ndash;&gt;-->
+<!--&lt;!&ndash;    </record>&ndash;&gt;-->
+
+<!--    <record id="crm_phonecall_number_manage_view" model="ir.ui.view">-->
+<!--        <field name="name">crm.numbermanage.tree</field>-->
+<!--        <field name="model">crm.numbermanage</field>-->
+<!--        <field name="arch" type='xml'>-->
+<!--            <tree string="Kho đầu số">-->
+<!--                <field name='name' class='header_number' />-->
+<!--                <field name='phone_number_head' class='header_number' />-->
+<!--                <field name='telecom_operator' />-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="crm_phonecall_number_manage_form" model="ir.ui.view">-->
+<!--        <field name="name">crm.numbermanage.form</field>-->
+<!--        <field name="model">crm.numbermanage</field>-->
+<!--        <field name="arch" type='xml'>-->
+<!--            <form string="Kho đầu số">-->
+<!--                <sheet>-->
+<!--                    <group>-->
+<!--                        <field name='name' />-->
+<!--                        <field name='phone_number_head' />-->
+<!--                        <field name='telecom_operator' />-->
+<!--                    </group>-->
+<!--                </sheet>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="crm_phone_ext_number_action" model="ir.actions.act_window">-->
+<!--        <field name="name">Quản lý số lẻ</field>-->
+<!--        <field name="res_model">crm.phone.ext.number</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
+
+<!--    <record id="crm_phonecalls_numbermanage_action" model="ir.actions.act_window">-->
+<!--        <field name="name">Quản lý kho đầu số</field>-->
+<!--        <field name="res_model">crm.numbermanage</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
+
+<!--    <record id="crm_phonecalls_myphonecall_action" model="ir.actions.act_window">-->
+<!--        <field name="name">Cuộc gọi của tôi</field>-->
+<!--        <field name="res_model">crm.myphone</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
+<!--    <menuitem id="crm_memu_phonecall_myphone" name="Cuộc gọi của tôi" parent="crm_menu_phonecall"-->
+<!--        action="crm_phonecalls_myphonecall_action" />-->
+<!--    <menuitem id="crm_memu_phonecall_numbermanage" name="Kho đầu số" parent="crm_menu_phonecall"-->
+<!--        action="crm_phonecalls_numbermanage_action" />-->
+<!--        <menuitem id="crm_menu_phonecall" name="Phone Calls" parent="crm_menu_root" />-->
+<!--    <menuitem id="crm_menu_phonecall_hotline" name="Hotlines" parent="crm_menu_phonecall"-->
+<!--        action="crm_phonecalls_hotline_action" />-->
+
+    <record id="crm_phone_ext_number_tree" model="ir.ui.view">
+        <field name="name">crm.phone.ext.number.tree</field>
+        <field name="model">crm.phone.ext.number</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="write_date"/>
+                <field name="ext_number" />
+                <field name="public_number" />
+                <field name="user_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+    <record id="crm_phone_ext_number_form" model="ir.ui.view">
+        <field name="name">crm.phone.ext.number.form</field>
+        <field name="model">crm.phone.ext.number</field>
+        <field name="arch" type="xml">
+            <form string="Ext Number">
+                <sheet>
+                    <group>
+                        <field name="write_date"/>
+                        <field name="ext_number" />
+                        <field name="user_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="crm_phone_ext_number_action" model="ir.actions.act_window">
+        <field name="name">Manage Ext Number</field>
+        <field name="res_model">crm.phone.ext.number</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

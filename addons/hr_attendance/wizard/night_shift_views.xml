@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="update_night_shift_form_view" model="ir.ui.view">
+		<field name="name">res.company.form</field>
+		<field name="model">res.company</field>
+		<field name="arch" type="xml">
+			<form string="Night Shift">
+				<sheet>
+					<sheet>
+						<group>
+							<field name="start_night_shift"></field>
+                        	<field name="end_night_shift"></field>
+						</group>
+					</sheet>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<record id="action_server_update_night_shift" model="ir.actions.server">
+        <field name="name">Night Shift Update</field>
+        <field name="model_id" ref="model_res_company"/>
+        <field name="state">code</field>
+        <field name="code">action =  env.get('res.company')._update_night_shift()</field>
+    </record>
+</odoo>

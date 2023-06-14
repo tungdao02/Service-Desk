@@ -1,0 +1,55 @@
+<odoo>
+	<record id="office_request_view_tree" model="ir.ui.view">
+		<field name="name">office.request.tree</field>
+		<field name="model">office.request</field>
+		<field name="arch" type="xml">
+			<tree string="Danh sách văn phòng phẩm">
+                <field name="office_code"/>
+				<field name="office_name"/>
+				<field name="office_unit"/>
+				<field name="description"/>
+			</tree>
+		</field>
+	</record>
+	<record id="office_request_view_form" model="ir.ui.view">
+		<field name="name">office.request.form</field>
+		<field name="model">office.request</field>
+		<field name="arch" type="xml">
+			<form string="Tạo mới đơn">
+<!--				<field name="can_draft" invisible="1"/>-->
+<!--				<field name="can_waiting_for_approval" invisible="1"/>-->
+<!--                <field name="can_approve" invisible="1"/>-->
+<!--                <field name="can_reject" invisible="1"/>-->
+<!--				<field name="is_permission" invisible="1"/>-->
+<!--                <header>-->
+<!--                    <button string="Gửi duyệt" name="action_confirm" attrs="{'invisible':['|',('is_permission','=', True),('status','!=','A')]}" type="object" class="oe_highlight"/>-->
+<!--					<button string="Xác nhận" name="action_approve" attrs="{'invisible':['|',('is_permission','=', True),('status','!=', 'B')]}" type="object" class="oe_highlight"/>-->
+<!--					<button string="Từ chối" name="action_reject" attrs="{'invisible':['|',('is_permission','=', True),('status','!=', 'B')]}" type="object" class="oe_highlight"/>-->
+<!--                    <field name="status" widget="statusbar" statusbar_visible="A,B,C,D"/>-->
+<!--                </header>-->
+				<sheet>
+                    <group>
+                        <group>
+							<field name="office_code" required="True"/>
+							<field name="office_name" required="True"/>
+						</group>
+						<group>
+							<field name="office_unit" string="Đơn vị tính"/>
+							<field name="description" string="Nội dung"/>
+						</group>
+                    </group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="office_request_action" model="ir.actions.act_window">
+		<field name="name">office request</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">office.request</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<menuitem id="menu_office_request" name="office.request" />
+	<menuitem id="menu_office_request_1" name="office.request" parent="menu_office_request" action="office_request_action"/>
+</odoo>

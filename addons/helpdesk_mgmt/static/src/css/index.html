@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./asset/css/reset.css" />
+        <link rel="stylesheet" href="./asset/css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,500&display=swap"
+            rel="stylesheet"
+        />
+
+        <title>Form</title>
+    </head>
+    <body>
+        <main>
+            <div class="registration-form">
+                <p class="form-title">Registration Form</p>
+                <div class="form-info">
+                    <div class="username">
+                        <span class="title">Username:</span>
+                        <input
+                            type="text"
+                            placeholder="Username"
+                            class="username-input"
+                        />
+                    </div>
+                    <div class="email-address">
+                        <span class="title">Email address:</span>
+                        <input
+                            type="text"
+                            placeholder="Email address"
+                            class="email-address-input"
+                        />
+                    </div>
+                    <div class="password">
+                        <span class="title">Password:</span>
+                        <input
+                            type="text"
+                            placeholder="Password"
+                            class="password-input"
+                        />
+                    </div>
+                    <div class="confirm-password">
+                        <span class="title">Confirm password:</span>
+                        <input
+                            type="text"
+                            placeholder="Confirm password"
+                            class="confirm-password-input"
+                        />
+                    </div>
+                </div>
+
+
+                <div class="user-info">
+
+                    <div class="user-first-name">
+                        <p class="first-name__title">Firstname</p>
+                        <input
+                            type="text"
+                            placeholder="Firstname"
+                            class="firstname"
+                        />
+                    </div>
+
+                    <div class="user-last-name">
+                        <p class="last-name__title">Lastname</p>
+                        <input
+                            type="text"
+                            placeholder="Lastname"
+                            class="lastname"
+                        />
+                    </div>
+
+                </div>
+
+
+                <div class="select">
+                    <p class="gender-select__title">Gender</p>
+                    <select class="gender-select">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="undefined">Undefined</option>
+                    </select>
+                </div>
+                <div class="input-file">
+                    <label class="select-file">Select a file:</label>
+                    <input type="file" id="myfile" name="myfile" />
+                </div>
+                <div class="text-area">
+                    <p><label class="desc-title">Description:</label></p>
+                    <textarea class="desc-inner" ></textarea>
+
+                    <!-- rows="4" cols="54" -->
+                </div>
+                <div class="agree-checkbox">
+                    <input type="checkbox" />
+                    <label for="agree"> I agree to the Term of Service</label>
+                </div>
+                <div class="want-checkbox">
+                    <input type="checkbox" />
+                    <label for="want">
+                        I want to receive news and special offers</label
+                    >
+                </div>
+                <button class="btn-submit" type="Submit">Submit</button>
+            </div>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+<!-- 
+    <record id="helpdesk_ticket_sla_tree" model="ir.ui.view">
+        <field name="name">view.helpdesk.sla.tree</field>
+        <field name="model">helpdesk.ticket.sla</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name ="name" string="Tên SLA"/>
+                <field name ="sla_model_id" string = " Mẫu SLA"/>
+                <field name ="status" string = "Trạng thái SLA"/>
+                <field name = "sla_time" string = "Thời hạn" widget = "float_time"/>
+                
+            </tree>
+        </field>
+    </record>
+
+    <record id="helpdesk_ticket_sla_form" model="ir.ui.view">
+        <field name="name">view.helpdesk.sla.form</field>
+        <field name="model">helpdesk.ticket.sla</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name ="name" string = "Tên SLA"/>
+                        <field name ="sla_model_id" string = "Mẫu SLA" />   
+                        <field name ="status" string = "Trạng thái SLA"/>
+                        <field name ="status" invisible = "1" />
+                        <field name = "from_stage_id" />
+                        <field name = "to_stage_id" />
+ -->
+
+
+                        <!-- <field name ="sla_model_id" string = "Mẫu SLA" readonly="1"  /> groups = "helpdesk_mgmt.group_helpdesk_Employee"  -->
+                        <!-- <field name ="status" string = "Trạng thái SLA"/> -->
+                        <!-- <field name ="status" invisible = "1" readonly="1" groups = "helpdesk_mgmt.group_helpdesk_Employee"/> -->
+                        
+                        <!-- <field name = "from_stage_id" readonly="1"/>
+                        <field name = "to_stage_id" readonly="1" />
+                        <field name = "explaination" string="Giải trình" attrs="{'invisible':[('status', '!=', 'fail')]}" /> -->
+<!--                         
+                    </group> 
+                </sheet>
+            </form>
+        </field>
+    </record> -->
+
+
+
+
+</odoo>

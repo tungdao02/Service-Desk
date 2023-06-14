@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="slide_exam_form_view" model="ir.ui.view">
+            <field name="name">slide_exam.form.view</field>
+            <field name="model">slide.exam</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <h1>Exam</h1>
+                    </header>
+                    <sheet>
+                            <group>
+                                <field name="name"/>
+                                <field name="question_count"/>
+                                <field name="select_check"/>
+                                <field name="question_ids" widget="many2many_tags" />
+                                <field name="question_ids" widget="one2many_list"/>
+                          </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="slide_exam_tree_view" model="ir.ui.view">
+            <field name="name">slide_exam.tree.view</field>
+            <field name="model">slide.exam</field>
+            <field name="arch" type="xml">
+                <tree string="Set Categories" >
+                    <field name="name"/>
+                    <field name="question_count"/>
+                    <field name="question_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="slice_exam_action" model="ir.actions.act_window">
+            <field name="name">Quản lý bộ đề</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">slide.exam</field>
+            <!-- <field name="view_type">form</field> --> <!-- Odoo 13 has removed this field -->
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('slide_exam_tree_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('slide_exam_form_view')})]"/>
+        </record>
+<!--        <menuitem-->
+<!--            id="menu_slice_exam_action"-->
+<!--            parent="website_slides_menu_courses"-->
+<!--            name="Exams"-->
+<!--            sequence="25"-->
+<!--            action="slice_exam_action"/>-->
+</odoo>

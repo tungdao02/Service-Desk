@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    action-->
+    <record id="crm_lead_storage" model="ir.actions.act_window">
+        <field name="name">Lead Storage</field>
+        <field name="res_model">crm.lead.storage.ref.info</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+<!--    view-->
+    <record id="crm_lead_storage_tree" model="ir.ui.view">
+        <field name="name">crm.lead.storage.tree</field>
+        <field name="model">crm.lead.storage.ref.info</field>
+        <field name="arch" type="xml">
+            <tree string="Lead Storage" multi_edit="1">
+                <field name="name" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+    <record id="crm_lead_storage_form" model="ir.ui.view">
+        <field name="name">crm.lead.storage.tree</field>
+        <field name="model">crm.lead.storage.ref.info</field>
+        <field name="arch" type="xml">
+            <form string="Lead Storage" multi_edit="1">
+                <header>
+                    <button name="action_assign_lead_source" string="Assign Leads" type="object"/>
+                </header>
+                <sheet>
+                    <field name="name"/>
+                    <field name="owner" readonly="1"/>
+                    <field name="import_date" readonly="1"/>
+                    <notebook>
+                        <page string="List leads">
+                            <field name="reference_ids" context="{'form_view_ref': 'crm.crm_lead_storage_view_form'}">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="phone"/>
+                                    <field name="source_id"/>
+                                    <field name="create_date"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="crm_lead_storage_view_form" model="ir.ui.view">
+        <field name="name">crm.lead.storage.view.form</field>
+        <field name="model">crm.lead.storage</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="phone"/>
+                        <field name="source_id"/>
+                        <field name="create_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="crm_lead_storage_kanban" model="ir.ui.view">
+        <field name="name">crm.lead.storage.kanban</field>
+        <field name="model">crm.lead.storage.ref.info</field>
+        <field name="arch" type="xml">
+            <kanban string="Lead Storage" multi_edit="1">
+                <field name="name" readonly="1"/>
+                <field name="owner" readonly="1"/>
+                <field name="import_date" readonly="1"/>
+                <field name="optimize_log" readonly="1"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_content oe_kanban_global_click">
+                            <div>
+                                <strong class="o_kanban_record_title"><span><field name="name"/></span></strong>
+                            </div>
+                            <div>
+                                <span class="o_kanban_record_subtitle"><field name="owner"/></span>
+                            </div>
+                            <div class="o_kanban_record_bottom">
+                                <div class="oe_kanban_bottom_right">
+                                    <field name="import_date" />
+                                    <field name="optimize_log" />
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+<!--    menu-item-->
+</odoo>

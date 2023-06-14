@@ -1,0 +1,83 @@
+<odoo>
+	<!-- <record id="print_doc_request_view_tree" model="ir.ui.view">
+		<field name="name">print.doc.request.tree</field>
+		<field name="model">print.doc.request</field>
+		<field name="arch" type="xml">
+			<header>
+                    <button string="Duyệt" name="action_confirm" id="action_confirm_btn" type="object" class="oe_highlight"/>
+                    <button string="Từ chối" name="action_reject" id="action_reject_btn" type="object" class="oe_highlight"/>
+                </header>
+			<tree string="Danh sách đơn xin in tài liệu">
+                <field name="request_type" string="Loại đơn"/>
+				<field name="employee_id" string="Nhân viên"/>
+				<field name="reasons"/>
+				<field name="need_approve" string="Cấp trên duyệt không?"/>
+				<field name="approve_type"/>
+				<field name="approver" string="Người duyệt"/>
+                <field name="request_status" string="Trạng thái"/>
+				<field name="create_date" string="Ngày tạo"/>
+				<field name="create_uid" string="Người tạo"/>
+			</tree>
+		</field>
+	</record> -->
+	<record id="print_doc_request_view_form" model="ir.ui.view">
+		<field name="name">print.doc.request.form</field>
+		<field name="model">print.doc.request</field>
+		<field name="arch" type="xml">
+			<form string="Tạo mới đơn">
+<!--				<field name="can_draft" invisible="1"/>-->
+<!--				<field name="can_waiting_for_approval" invisible="1"/>-->
+<!--                <field name="can_approve" invisible="1"/>-->
+<!--                <field name="can_reject" invisible="1"/>-->
+<!--				<field name="is_permission" invisible="1"/>-->
+<!--                <header>-->
+<!--                    <button string="Gửi duyệt" name="action_confirm" attrs="{'invisible':['|',('is_permission','=', True),('status','!=','A')]}" type="object" class="oe_highlight"/>-->
+<!--					<button string="Xác nhận" name="action_approve" attrs="{'invisible':['|',('is_permission','=', True),('status','!=', 'B')]}" type="object" class="oe_highlight"/>-->
+<!--					<button string="Từ chối" name="action_reject" attrs="{'invisible':['|',('is_permission','=', True),('status','!=', 'B')]}" type="object" class="oe_highlight"/>-->
+<!--                    <field name="status" widget="statusbar" statusbar_visible="A,B,C,D"/>-->
+<!--                </header>-->
+				<sheet>
+					<group>
+						<field name="request_type" string="Loại đơn" required="True" readonly="True"/>
+                        <field name="approver" string="Người duyệt" readonly="True"/>
+                        <field name="reasons" required="True"/>
+                        <field name="depa_id" string="Phòng ban TD" required="True" readonly="True"/>
+                        <field name="need_approve" string="Cấp trên duyệt không?" required="True" readonly="True"/>
+                        <field name="approve_type" string="Đối tượng duyệt" readonly="True"/>
+                        <field name="request_status" string="Trạng thái" readonly="True"/>
+                        <field name="count_print"/>
+					</group>
+                    <notebook>
+                       <page name="hr_settings" string="Danh sách in tài liệu" groups="hr.group_hr_user">child_ids
+<!--                                <field name="child_ids" string="Content"/>-->
+                                <group>
+                                    <field name="print_doc_request_detail_ids" string="Content" widget="one2many" nolabel="1" colspan="2" >
+                                         <tree editable="top">
+                                         <field name="print_doc_category_id" string="Mã đơn xin in tài liệu"/>
+                                         <field name="doc_name" string="Tên tài liệu cần in ấn"/>
+                                         <field name="unit" string="Đơn vị tính"/>
+                                         <field name="unit_price"/>
+                                         <field name="description"/>
+                                         <field name="quantity"/>
+                                             <field name="content"/>
+                                             <field name="note"/>
+                                    </tree>
+                                </field>
+                                </group>
+                        </page>
+                    </notebook>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="print_doc_request_action" model="ir.actions.act_window">
+		<field name="name">print doc request</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">print.doc.request</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<menuitem id="menu_print_doc_request" name="print.doc.request" />
+	<menuitem id="menu_print_doc_request_1" name="print.doc.request" parent="menu_print_doc_request" action="print_doc_request_action"/>
+</odoo>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_employee_schedule_report_form" model="ir.ui.view">
+        <field name="name">employee.schedule.report.form</field>
+        <field name="model">employee.schedule.report</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Bảng tổng hợp">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="month" required="1" string="Chọn tháng"/>
+                        </group>
+                        <group>
+                            <field name="year" required="1" string="Chọn năm"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <group>
+                            <button name="generate_report" string="Xem báo cáo" type="object"
+                                    class="btn-primary btn_report_schedule"/>
+                            <button string="Hủy" class="btn-danger" special="cancel"/>
+                        </group>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="employee_schedule_report_action" model="ir.actions.act_window">
+        <field name="name">Bảng tổng hợp phân ca</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">employee.schedule.report</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem name="Bảng tổng hợp" id='employee_schedule_report_menu' parent="employees_scheduling_menu_root"
+              action="employee_schedule_report_action" sequence="10"/>
+
+    <record id="employee_schedule_inherit_view" model="ir.ui.view">
+        <field name="name">employee.schedule.inherit.tree.view</field>
+        <field name="model">employee.schedule.inherit</field>
+        <field name="arch" type="xml">
+            <tree create="false" expand="1">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="company"/>
+                <field name="department"/>
+                <field name="date_of_report"/>
+                <field name="total_day" invisible="1"/>
+                <field name="day1" class="column_report_schedule" widget="html"/>
+                <field name="day2" class="column_report_schedule" widget="html"/>
+                <field name="day3" class="column_report_schedule" widget="html"/>
+                <field name="day4" class="column_report_schedule" widget="html"/>
+                <field name="day5" class="column_report_schedule" widget="html"/>
+                <field name="day6" class="column_report_schedule" widget="html"/>
+                <field name="day7" class="column_report_schedule" widget="html"/>
+                <field name="day8" class="column_report_schedule" widget="html"/>
+                <field name="day9" class="column_report_schedule" widget="html"/>
+                <field name="day10" class="column_report_schedule" widget="html"/>
+                <field name="day11" class="column_report_schedule" widget="html"/>
+                <field name="day12" class="column_report_schedule" widget="html"/>
+                <field name="day13" class="column_report_schedule" widget="html"/>
+                <field name="day14" class="column_report_schedule" widget="html"/>
+                <field name="day15" class="column_report_schedule" widget="html"/>
+                <field name="day16" class="column_report_schedule" widget="html"/>
+                <field name="day17" class="column_report_schedule" widget="html"/>
+                <field name="day18" class="column_report_schedule" widget="html"/>
+                <field name="day19" class="column_report_schedule" widget="html"/>
+                <field name="day20" class="column_report_schedule" widget="html"/>
+                <field name="day21" class="column_report_schedule" widget="html"/>
+                <field name="day22" class="column_report_schedule" widget="html"/>
+                <field name="day23" class="column_report_schedule" widget="html"/>
+                <field name="day24" class="column_report_schedule" widget="html"/>
+                <field name="day25" class="column_report_schedule" widget="html"/>
+                <field name="day26" class="column_report_schedule" widget="html"/>
+                <field name="day27" class="column_report_schedule" widget="html"/>
+                <field name="day28" class="column_report_schedule" widget="html"/>
+                <field name="day29" class="column_report_schedule" widget="html"/>
+                <field name="day30" class="column_report_schedule" widget="html"/>
+                <field name="day31" class="column_report_schedule" widget="html"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

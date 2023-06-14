@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    action-->
+    <record id="crm_lead_assign" model="ir.actions.act_window">
+        <field name="name">Lead Storage</field>
+        <field name="res_model">crm.lead.assign.rule</field>
+        <field name="view_mode">form</field>
+    </record>
+    <record id="crm_lead_assign_form" model="ir.ui.view">
+        <field name="name">crm.lead.assign.rule.tree</field>
+        <field name="model">crm.lead.assign.rule</field>
+        <field name="arch" type="xml">
+            <form string="Lead Assign" create="false">
+                <sheet>
+                    <group>
+                        <field name="lead_assign_count" attrs="{'required': True}"/>
+                        <field name="team_id" widget="many2many_tags"
+                               options="{'no_create': True, 'no_quick_create': True, 'no_create_edit': True}"/>
+                        <field name="team_member_id" widget="many2many_tags"
+                               options="{'no_create': True, 'no_quick_create': True, 'no_create_edit': True}"/>
+                        <field name="source_id" widget="many2many_tags" placeholder="All source" attrs="{'required': True}"
+                               options="{'no_create': True, 'no_quick_create': True, 'no_create_edit': True}" />
+                        <field name="campaign_id" attrs="{'required': True}"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_assign_lead_source" string="Assign Leads" type="object"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="crm_team_assign" model="ir.actions.act_window">
+        <field name="name">Lead Storage</field>
+        <field name="res_model">crm.team.assign.rule</field>
+        <field name="view_mode">form</field>
+    </record>
+    <record id="crm_team_assign_form" model="ir.ui.view">
+        <field name="name">crm.team.assign.rule.tree</field>
+        <field name="model">crm.team.assign.rule</field>
+        <field name="arch" type="xml">
+            <form string="Lead Team Assign" create="false">
+
+                <sheet>
+                    <group>
+                        <field name="auto_assign_all"/>
+                    </group>
+                    <br/>
+                    <group attrs="{'invisible':[('auto_assign_all','=',True)]}">
+                        <field name="auto_assign_count"/>
+                        <field name="team_member_ids" widget="many2many_tags"
+                               options="{'no_create': True, 'no_quick_create': True, 'no_create_edit': True}"
+                               domain="[('crm_team_id', '=', team_id )]"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_assign_lead_source" string="Assign Leads" type="object"/>
+                    <field name="team_id" attrs="{'invisible': True}"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

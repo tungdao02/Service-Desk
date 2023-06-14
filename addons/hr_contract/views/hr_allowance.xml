@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="hr_allowance_form_view" model="ir.ui.view">
+            <field name="name">hr.contract.allowance.form.view</field>
+            <field name="model">hr.contract.allowance</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <h1>Thêm mới phụ cấp</h1>
+                    </header>
+                    <sheet>
+                            <group>
+                                <field name="name"/>
+                                <field name="date_apply"/>
+                                <field name="money"/>
+                                <field name="note"/>
+                            </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_allowance_tree_view" model="ir.ui.view">
+            <field name="name">hr.contract.allowance.tree.view</field>
+            <field name="model">hr.contract.allowance</field>
+            <field name="arch" type="xml">
+                <tree string="Danh sách phụ cấp" >
+                    <field name="name"/>
+                    <field name="date_apply"/>
+                    <field name="money"/>
+                    <field name="note"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="contract_allowance" model="ir.actions.act_window">
+            <field name="name">Set allowance</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.contract.allowance</field>
+            <!-- <field name="view_type">form</field> --> <!-- Odoo 13 has removed this field -->
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('hr_allowance_tree_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('hr_allowance_form_view')})]"/>
+        </record>
+        <menuitem
+            id="menu_human_resources_configuration_contract_allowance"
+            action="contract_allowance"
+            name="Allowances"
+            sequence="25"/>
+</odoo>

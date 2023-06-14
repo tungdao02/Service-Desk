@@ -1,0 +1,34 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_employee_category_user,hr.employee.category.user,model_hr_employee_category,group_hr_user,1,1,1,1
+access_hr_employee_category_emp,hr.employee.category.emp,model_hr_employee_category,base.group_user,1,0,0,0
+access_hr_employee_user,hr.employee user,model_hr_employee,group_hr_user,1,1,1,1
+access_hr_employee_system_user,hr.employee system user,model_hr_employee,base.group_system,1,0,0,0
+access_hr_employee_public_user,hr.employee_public,model_hr_employee_public,base.group_user,1,0,0,0
+access_hr_employee_resource_user,resource.resource.user,resource.model_resource_resource,group_hr_user,1,1,1,1
+access_hr_department_user,hr.department.user,model_hr_department,group_hr_user,1,1,1,1
+access_hr_department_employee,hr.department.employee,model_hr_department,base.group_user,1,0,0,0
+access_hr_job_user,hr.job user,model_hr_job,group_hr_user,1,1,1,1
+access_hr_plan_activity_type_employee,access_hr_plan_activity_type,model_hr_plan_activity_type,base.group_user,1,0,0,0
+access_hr_plan_employee,access_hr_plan_employee,model_hr_plan,base.group_user,1,0,0,0
+access_hr_plan_activity_type_hr_user,access_hr_plan_activity_type,model_hr_plan_activity_type,group_hr_user,1,1,1,1
+access_hr_plan_hr_user,access_hr_plan_hr_user,model_hr_plan,group_hr_user,1,1,1,1
+access_hr_plan_wizard,access.hr.plan.wizard,model_hr_plan_wizard,hr.group_hr_user,1,1,1,0
+access_hr_departure_wizard,access.hr.departure.wizard,model_hr_departure_wizard,hr.group_hr_user,1,1,1,0
+access_hr_work_location_user,access_hr_work_location_user,model_hr_work_location,base.group_user,1,0,0,0
+access_hr_work_location_manager,access_hr_work_location_manager,model_hr_work_location,group_hr_manager,1,1,1,1
+access_hr_departure_reason,access_hr_departure_reason_user,model_hr_departure_reason,group_hr_user,1,1,1,1
+access_hr_contract_type_manager,hr.contract.type.manager,model_hr_contract_type,hr.group_hr_user,1,1,1,1
+access_hr_employee_relative_user,hr.employee.relative.user,model_hr_employee_relative,hr.group_hr_user,1,1,1,1
+access_claim_management_user,claim.management.user,model_claim_management,hr.group_hr_user,1,1,1,1
+access_claim_type_user,claim.type.user,model_claim_type,hr.group_hr_user,1,1,1,1
+access_office_item_request_bill_user,office.item.request.bill.user,model_office_item_request_bill,hr.group_hr_user,1,1,1,1
+access_office_item_bill_dtl_user,office.item.bill.dtl.user,model_office_item_bill_dtl,hr.group_hr_user,1,1,1,1
+access_office_request_user,office.request.user,model_office_request,hr.group_hr_user,1,1,1,1
+access_print_doc_request_user,print.doc.request.user,model_print_doc_request,hr.group_hr_user,1,1,1,1
+access_print_doc_request_detail_user,print.doc.request.detail.user,model_print_doc_request_detail,hr.group_hr_user,1,1,1,1
+access_print_doc_category_user,print.doc.category.user,model_print_doc_category,hr.group_hr_user,1,1,1,1
+access_print_doc_type_user,print.doc.type.user,model_print_doc_type,hr.group_hr_user,1,1,1,1
+access_print_doc_unit_user,print.doc.unit.user,model_print_doc_unit,hr.group_hr_user,1,1,1,1
+access_nation_user,nation.user,model_nation,hr.group_hr_user,1,1,1,1
+access_religion_user,religion.user,model_religion,hr.group_hr_user,1,1,1,1
+access_res_ward,res.ward,model_res_ward,hr.group_hr_user,1,1,1,1

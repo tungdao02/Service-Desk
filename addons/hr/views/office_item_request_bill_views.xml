@@ -1,0 +1,86 @@
+<odoo>
+	<record id="office_item_request_bill_view_tree" model="ir.ui.view">
+		<field name="name">office.item.request.bill.tree</field>
+		<field name="model">office.item.request.bill</field>
+		<field name="arch" type="xml">
+			<tree string="Danh sách đơn xin văn phòng phẩm">
+                <field name="status" string="Trạng thái"/>
+				<field name="employee_id" string="Nhân viên"/>
+				<field name="reasons"/>
+				<field name="need_approve" string="Có quản lý duyệt?"/>
+				<field name="approve_type" string="Loại hình duyệt"/>
+				<field name="approver" string="Người duyệt"/>
+				<field name="to_email" string="Gửi email tới"/>
+                <field name="request_type" string="Loại đơn"/>
+				<field name="create_date" string="Ngày tạo"/>
+				<field name="create_uid" string="Người tạo"/>
+			</tree>
+		</field>
+	</record>
+	<record id="office_item_request_bill_view_form" model="ir.ui.view">
+		<field name="name">office.item.request.bill.form</field>
+		<field name="model">office.item.request.bill</field>
+		<field name="arch" type="xml">
+			<form string="Tạo mới đơn">
+<!--				<field name="can_draft" invisible="1"/>-->
+<!--				<field name="can_waiting_for_approval" invisible="1"/>-->
+<!--                <field name="can_approve" invisible="1"/>-->
+<!--                <field name="can_reject" invisible="1"/>-->
+<!--				<field name="is_permission" invisible="1"/>-->
+<!--                <header>-->
+<!--                    <button string="Gửi duyệt" name="action_confirm" attrs="{'invisible':['|',('is_permission','=', True),('status','!=','A')]}" type="object" class="oe_highlight"/>-->
+<!--					<button string="Xác nhận" name="action_approve" attrs="{'invisible':['|',('is_permission','=', True),('status','!=', 'B')]}" type="object" class="oe_highlight"/>-->
+<!--					<button string="Từ chối" name="action_reject" attrs="{'invisible':['|',('is_permission','=', True),('status','!=', 'B')]}" type="object" class="oe_highlight"/>-->
+<!--                    <field name="status" widget="statusbar" statusbar_visible="A,B,C,D"/>-->
+<!--                </header>-->
+				<sheet>
+					<group>
+						<field name="request_type" string="Loại đơn" required="True" readonly="True"/>
+                        <field name="reasons" required="True"/>
+					</group>
+
+                    <group>
+                        <group>
+							<field name="need_approve" string="Cấp trên duyệt không?" required="True" readonly="True"/>
+							<field name="approve_type" string="Đối tượng duyệt" readonly="True"/>
+						</group>
+						<group>
+							<field name="depa_id" string="Phòng ban TD" required="True" readonly="True"/>
+							<field name="approver" string="Người duyệt" readonly="True"/>
+						</group>
+                    </group>
+					<group>
+						<field name="to_email"/>
+					</group>
+                    <notebook>
+                       <page name="hr_settings" string="Danh sách văn phòng phẩm cần xin" groups="hr.group_hr_user">child_ids
+<!--                                <field name="child_ids" string="Content"/>-->
+                                <group>
+                                    <field name="office_item_bill_dtl_ids" string="Content" widget="one2many" nolabel="1" colspan="2" >
+                                         <tree editable="top">
+                                         <field name="office_request_id" string="Mã văn phòng phẩm"/>
+                                         <field name="office_name" string="Tên Văn phòng phẩm"/>
+                                         <field name="office_unit"/>
+                                         <field name="description" string="Mô tả"/>
+                                         <field name="quantity"/>
+                                         <field name="receiver"/>
+                                    </tree>
+                                </field>
+                                </group>
+                        </page>
+                    </notebook>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="office_item_request_bill_action" model="ir.actions.act_window">
+		<field name="name">office item request bill</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">office.item.request.bill</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<menuitem id="menu_office_item_request_bill" name="office.item.request.bill" />
+	<menuitem id="menu_office_item_request_bill_1" name="office.item.request.bill" parent="menu_office_item_request_bill" action="office_item_request_bill_action"/>
+</odoo>

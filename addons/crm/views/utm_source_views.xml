@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="action_utm_source_tree_view" model="ir.actions.act_window">
+		<field name="name">UTM Source</field>
+		<field name="res_model">utm.source</field>
+		<field name="view_mode">tree</field>
+		<field name="view_id" ref="utm.utm_source_view_tree"/>
+	</record>
+</odoo>

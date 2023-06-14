@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<menuitem
+				id="import_attendance"
+				name="Import Attendance"
+				action="import_attendance_wizard_action"
+				parent="hr_attendance.menu_hr_attendance_root"
+		/>
+	</data>
+</odoo>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    
+
+    <record id="helpdesk_ticket_sla1" model="ir.ui.view">
+        <field name="name">view_helpdesk_summerize.tree</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="Ticket" />
+                <field name ="name_sla" string="Tên SLA" />
+                <field name ="sla_model_id" string = " Mẫu SLA" />
+                <field name ="status" string = "Trạng thái SLA" />
+                <field name = "deadline_datetime" string = "Thời hạn" />
+            </tree>
+        </field>
+    </record>
+
+    
+
+</odoo>
+
+
